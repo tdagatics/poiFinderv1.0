@@ -55,6 +55,7 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
+    
     /*
      NSDictionary *tempDictionary= [self.googlePlacesArrayFromAFNetworking objectAtIndex:indexPath.row];
      
@@ -123,4 +124,8 @@
 }
 */
 
+- (IBAction)searchButtonPressed:(id)sender {
+    SearchViewController *searchVC = [[SearchViewController alloc] init];
+    [searchVC localSearchForTableViewPOI:self.searchTextField.text];
+}
 @end

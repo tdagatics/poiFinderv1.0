@@ -12,6 +12,7 @@
 
 @interface SearchViewController : UIViewController
 
--(void)localSearchForPOI:(NSString *)searchText mapView:(MKMapView *)mapView;
+-(void)localSearchForMapPOI:(NSString *)searchText mapView:(MKMapView *)mapView;
+-(void)localSearchForTableViewPOI:(NSString *)searchText;
 
 @end

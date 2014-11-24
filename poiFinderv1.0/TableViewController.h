@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SearchViewController.h"
 
 @interface TableViewController : UITableViewController
 
 @property (weak, nonatomic) IBOutlet UITableView *searchTableView;
+@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
+- (IBAction)searchButtonPressed:(id)sender;
+
+
 
 @end

@@ -40,7 +40,7 @@
 
 - (IBAction)searchButton:(id)sender {
     SearchViewController *searchVC = [[SearchViewController alloc] init];
-    [searchVC localSearchForPOI:self.searchTextField.text mapView:self.mapView];
+    [searchVC localSearchForMapPOI:self.searchTextField.text mapView:self.mapView];
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations

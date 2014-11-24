@@ -24,7 +24,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)localSearchForPOI:(NSString *)searchText mapView:(MKMapView *)mapView
+-(void)localSearchForMapPOI:(NSString *)searchText mapView:(MKMapView *)mapView
 {
     NSLog(@"Just checking: %@", searchText);
     // Use the search string to build the URL query and get data from Google
@@ -39,6 +39,25 @@
             annotation.coordinate = item.placemark.coordinate;
             annotation.subtitle = [NSString stringWithFormat:@"%@, %@ %@", item.placemark.addressDictionary[@"Street"], item.placemark.addressDictionary[@"State"], item.placemark.addressDictionary[@"ZIP"]];
             [mapView addAnnotation:annotation];
+            
+        }
+    }];
+
+}
+
+-(void)localSearchForTableViewPOI:(NSString *)searchText
+{
+    NSLog(@"Just checking: %@", searchText);
+    // Use the search string to build the URL query and get data from Google
+    MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
+    request.naturalLanguageQuery = searchText;
+    MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
+    [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
+        for (MKMapItem *item in response.mapItems) {
+            MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+            annotation.title = item.name;
+            annotation.coordinate = item.placemark.coordinate;
+            annotation.subtitle = [NSString stringWithFormat:@"%@, %@ %@", item.placemark.addressDictionary[@"Street"], item.placemark.addressDictionary[@"State"], item.placemark.addressDictionary[@"ZIP"]];
             
         }
     }];
