@@ -45,24 +45,25 @@
 
 }
 
--(void)localSearchForTableViewPOI:(NSString *)searchText
+-(NSMutableDictionary *)localSearchForTableViewPOI:(NSString *)searchText
 {
     NSLog(@"Just checking: %@", searchText);
     // Use the search string to build the URL query and get data from Google
     MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
     request.naturalLanguageQuery = searchText;
     MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
+    NSMutableDictionary *dictionaryOfPlaces = @{};
     [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
         for (MKMapItem *item in response.mapItems) {
-            MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-            annotation.title = item.name;
-            annotation.coordinate = item.placemark.coordinate;
-            annotation.subtitle = [NSString stringWithFormat:@"%@, %@ %@", item.placemark.addressDictionary[@"Street"], item.placemark.addressDictionary[@"State"], item.placemark.addressDictionary[@"ZIP"]];
-            
-        }
+            [dictionaryOfPlaces addEntriesFromDictionary:item];
+            NSLog(@"Check search results: %@", response);
+    }
     }];
-
+    
+    return dictionaryOfPlaces;
 }
+
+
 
 #pragma mark - MKMapViewDelegate Methods
 

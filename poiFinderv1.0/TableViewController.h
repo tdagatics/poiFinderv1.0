@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "SearchViewController.h"
 
-@interface TableViewController : UITableViewController
+@interface TableViewController : UIViewController <UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *searchTableView;
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 - (IBAction)searchButtonPressed:(id)sender;
-
+@property (strong, nonatomic) NSDictionary *dictionaryForTableView;
 
 
 @end

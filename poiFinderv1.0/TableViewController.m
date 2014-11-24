@@ -37,17 +37,15 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return [self.dictionaryForTableView count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    /*
-     return [self.googlePlacesArrayFromAFNetworking count];
-     */
     
     return 0;
+    
 }
 
 
@@ -55,11 +53,9 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
+    /*NSDictionary *tempDictionary= [self.MKLocalSearchArray objectAtIndex:indexPath.row];
     
-    /*
-     NSDictionary *tempDictionary= [self.googlePlacesArrayFromAFNetworking objectAtIndex:indexPath.row];
-     
-     cell.textLabel.text = [tempDictionary objectForKey:@"name"];
+    cell.textLabel.text = [tempDictionary objectForKey:@"name"];
      
      if([tempDictionary objectForKey:@"rating"] != NULL)
      {
@@ -69,13 +65,10 @@
      {
      cell.detailTextLabel.text = [NSString stringWithFormat:@"Not Rated"];
      }
-     
-     return cell;
-     }
-     */
     
+
     // Configure the cell...
-    
+    */
     return cell;
 }
 
@@ -126,6 +119,8 @@
 
 - (IBAction)searchButtonPressed:(id)sender {
     SearchViewController *searchVC = [[SearchViewController alloc] init];
-    [searchVC localSearchForTableViewPOI:self.searchTextField.text];
+    self.dictionaryForTableView = [searchVC localSearchForTableViewPOI:self.searchTextField.text];
 }
+
+ 
 @end
