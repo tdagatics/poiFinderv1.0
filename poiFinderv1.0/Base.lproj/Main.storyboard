@@ -31,7 +31,6 @@
                                 </state>
                                 <connections>
                                     <action selector="searchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zGt-HZ-xwo"/>
-                                    <segue destination="Jjd-T4-dd4" kind="push" id="Zq8-WX-oGl"/>
                                 </connections>
                             </button>
                         </subviews>
