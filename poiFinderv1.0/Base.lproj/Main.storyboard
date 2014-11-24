@@ -36,7 +36,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="h0O-8y-2cl"/>
+                    <navigationItem key="navigationItem" id="h0O-8y-2cl">
+                        <barButtonItem key="leftBarButtonItem" title="List View" id="uWh-6t-NGT">
+                            <connections>
+                                <segue destination="Jjd-T4-dd4" kind="push" id="tvI-hz-9vR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="Pwu-jn-Zdk" id="ia6-Ww-M6O"/>
                         <outlet property="searchTextField" destination="71Z-Lb-lhH" id="Pkm-Ms-F9v"/>
@@ -50,32 +56,12 @@
         <scene sceneID="0d2-if-u90">
             <objects>
                 <tableViewController title="Table View Controller" id="Jjd-T4-dd4" customClass="TableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Z9i-D5-IYU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="coC-65-3nq">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="coC-65-3nq" id="NlD-T2-zcI">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Jjd-T4-dd4" id="acx-Sf-ZTf"/>
-                            <outlet property="delegate" destination="Jjd-T4-dd4" id="oef-5e-skH"/>
-                        </connections>
-                    </tableView>
                     <navigationItem key="navigationItem" id="7dw-Xr-eQq"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="searchTableView" destination="Z9i-D5-IYU" id="0m2-Zd-Hmu"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6tE-YA-bu7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="997.5" y="1014.5"/>
+            <point key="canvasLocation" x="979.5" y="1014.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Y95-LB-HJd">

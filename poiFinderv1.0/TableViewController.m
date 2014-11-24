@@ -42,18 +42,41 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
+    /*
+     return [self.googlePlacesArrayFromAFNetworking count];
+     */
+    
     return 0;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    /*
+     NSDictionary *tempDictionary= [self.googlePlacesArrayFromAFNetworking objectAtIndex:indexPath.row];
+     
+     cell.textLabel.text = [tempDictionary objectForKey:@"name"];
+     
+     if([tempDictionary objectForKey:@"rating"] != NULL)
+     {
+     cell.detailTextLabel.text = [NSString stringWithFormat:@"Rating: %@ of 5",[tempDictionary   objectForKey:@"rating"]];
+     }
+     else
+     {
+     cell.detailTextLabel.text = [NSString stringWithFormat:@"Not Rated"];
+     }
+     
+     return cell;
+     }
+     */
     
     // Configure the cell...
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
