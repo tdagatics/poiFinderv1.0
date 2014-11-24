@@ -16,8 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    /*
     self.searchTableView.delegate = self;
     self.searchTableView.dataSource = self;
+    */
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

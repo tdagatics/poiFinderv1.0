@@ -37,11 +37,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="h0O-8y-2cl">
-                        <barButtonItem key="leftBarButtonItem" title="List View" id="uWh-6t-NGT">
-                            <connections>
-                                <segue destination="Jjd-T4-dd4" kind="push" id="tvI-hz-9vR"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="List View" id="uWh-6t-NGT"/>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="Pwu-jn-Zdk" id="ia6-Ww-M6O"/>
@@ -51,17 +47,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="505.5" y="1014.5"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="0d2-if-u90">
-            <objects>
-                <tableViewController title="Table View Controller" id="Jjd-T4-dd4" customClass="TableViewController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="7dw-Xr-eQq"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6tE-YA-bu7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="979.5" y="1014.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Y95-LB-HJd">
