@@ -37,14 +37,14 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return [self.dictionaryForTableView count];
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
     
-    return 0;
+    return [self.dictionaryForTableView count];
     
 }
 
@@ -52,6 +52,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    NSDictionary *tempDictionary = @{@"BF":@"TD"};
+    cell.textLabel.text = [tempDictionary objectForKey:@"BF"];
     
     /*NSDictionary *tempDictionary= [self.MKLocalSearchArray objectAtIndex:indexPath.row];
     
